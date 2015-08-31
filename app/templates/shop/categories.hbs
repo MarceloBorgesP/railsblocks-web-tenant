@@ -1,0 +1,65 @@
+<div id="page-menu">
+  <div class="container clearfix">
+    <div class="menu_page_title">
+      Produtos <span>Zertico</span>
+    </div>
+    <nav class="mini-nav">
+      <ul>
+        {{#each model as |category|}}
+          <li>
+            <a>{{category.name}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+    <div id="page-submenu-trigger">
+      <i class="icon-reorder"></i>
+    </div>
+  </div>
+</div>
+<section class="page_title">
+  <div class="container clearfix">
+    <h2>Loja</h2>
+    <span>As melhores soluções de Cloud do mercado.</span>
+    <ol class="breadcrumb">
+      <li>
+        <a>Página Inicial</a>
+      </li>
+      <li class="active">Loja</li>
+    </ol>
+  </div>
+</section>
+<section id="page_content">
+  <div class="wrap_content pb_n">
+    <div class="container clearfix">
+      {{#each model as |category|}}
+        <div class="col-sm-6 col-md-4">
+          <div class="box_category">
+            <div class="box_icon">
+              <i class="fa {{category.icon}}"></i>
+            </div>
+            <div class="box_desc">
+              <h3>
+                {{category.name}}
+              </h3>
+              <span>{{category.description}}</span>
+              <a class="btn btn-default btn-inverse">Veja as Opções</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  <br>
+  <div class="promo_box">
+    <div class="container">
+      <div class="col-lg-10">
+        <h3>Podemos lhe ajudar?</h3>
+        <span>Ficaremos felizes em lhe auxiliar caso tenha alguma dúvida, entre e fale conosco</span>
+      </div>
+      <div class="col-lg-2">
+        <a class="promo_button">Contato</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
