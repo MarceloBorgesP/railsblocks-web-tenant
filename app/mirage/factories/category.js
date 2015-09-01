@@ -1,10 +1,10 @@
 import Mirage, {faker} from 'ember-cli-mirage';
 
 export default Mirage.Factory.extend({
-  name: function() {
-    return faker.name.firstName();
+  name: function generateCategoryName(i) {
+    return "Category " + (i+1);
   },
-  description: "High Performance Server in a Class A Datacenter",
+  description: "Description",
   icon: "fa-cloud",
   enabled: true
 });

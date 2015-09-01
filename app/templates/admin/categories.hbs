@@ -18,24 +18,22 @@
 <!-- CONTENT -->
 <div class='wrapper wrapper-content'>
   <div class='row'>
-    <div class='col-lg-10 companies'>
-      <div class=''>
-        <h4>Categories</h4>
-      </div>
+    <div class='col-lg-10 s-element categories'>
+      <h4>Categories</h4>
       <div class="pull-right">
         {{link-to 'New Category' 'admin.categories.new' class="btn btn-default btn-inverse"}}
       </div>
       <br>
       <br>
       {{#each model as |category|}}
-        <div class="companies-item">
+        <div class="s-element-item">
           <i class="fa fa-square"></i>
           {{#link-to 'admin.categories.category' category}}
             {{category.name}}
           {{/link-to}}
         </div>
       {{else}}
-        <div class="companies-item">
+        <div class="s-element-item">
           <i class="fa fa-square"></i>
           <span>
             No categories yet!
