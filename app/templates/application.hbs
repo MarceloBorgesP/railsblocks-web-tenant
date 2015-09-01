@@ -1,3 +1,5 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+{{#if (is-admin)}}
+  {{partial "layouts/admin"}}
+{{else}}
+  {{partial "layouts/shop"}}
+{{/if}}
