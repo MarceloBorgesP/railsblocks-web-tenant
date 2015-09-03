@@ -1,34 +1,34 @@
 <div class='row wrapper backs'>
   <div class='col-lg-3 go-back'>
-    {{#link-to 'admin.categories'}}
+    {{#link-to 'admin.categories.category.groups' category.id}}
       <i class="fa fa-angle-left"></i>
-      <span>Categories</span>
+      <span>Groups</span>
     {{/link-to}}
   </div>
   <div class='col-lg-5 title'>
-    <span>{{model.name}}</span>
+    <span>{{group.name}}</span>
   </div>
-  <div class="col-lg-4">
-    <a class="btn btn-danger pull-right" {{action "delete"}} role="button"><i class="fa fa-times"></i> Delete Category</a>
+  <div class="col-lg-4 pull-right">
+    <a class="btn btn-danger pull-right" {{action "delete" }} role="button"><i class="fa fa-times"></i> Delete Group</a>
     <a class="btn btn-default pull-right mr_20" {{action 'save'}} id="save_top" role="button"><i class="fa fa-floppy-o"></i> Save</a>
   </div>
 </div>
 <div class='row wrapper backs-nav'>
   <div class='col-lg-10 col-lg-offset-1 comp-nav'>
     <div class="comp-nav-item">
-      {{#link-to 'admin.categories.category' model.id}}
+      {{#link-to 'admin.categories.category' category.id}}
         <i class="fa fa-info"></i>
         <span>Information</span>
       {{/link-to}}
     </div>
     <div class="comp-nav-item">
-      {{#link-to 'admin.categories.category.groups' model.id}}
+      {{#link-to 'admin.categories.category.groups' category.id}}
         <i class="fa fa-tags"></i>
         <span>Groups</span>
       {{/link-to}}
     </div>
     <div class="comp-nav-item">
-      {{#link-to 'admin.categories.category.groups.new' model.id}}
+      {{#link-to 'admin.categories.category.groups.new' category.id}}
         <i class="fa fa-plus"></i>
         <span>New Group</span>
       {{/link-to}}
@@ -41,15 +41,15 @@
     <div class="col-lg-8">
       <div class="comp-s-item border-bottom clearfix">
         <div class='col-lg-4'>
-          <h4>Name</h4>
+          <h4>Group name</h4>
           <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
         </div>
         <div class="col-lg-8">
           <div class="col-lg-8">
             {{#if isEditingName }}
-              {{input value=model.name id="name" class="string required form-control"}}
+              {{input value=group.name id="name" class="string required form-control"}}
             {{else}}
-              <span>{{model.name}}</span>
+              <span>{{group.name}}</span>
             {{/if}}
           </div>
           <div class="col-lg-4">
@@ -63,29 +63,29 @@
       </div>
       <div class="comp-s-item border-bottom clearfix">
         <div class='col-lg-4'>
-          <h4>Description</h4>
+          <h4>Group description</h4>
           <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
         </div>
         <div class="col-lg-8">
           <div class="col-lg-8">
             {{#if isEditingDesc }}
-              {{input value=model.description id="desc" class="string required form-control"}}
+              {{input value=group.description id="desc" class="string required form-control"}}
             {{else}}
-              <span>{{model.description}}</span>
+              <span>{{group.description}}</span>
             {{/if}}
           </div>
           <div class="col-lg-4">
             {{#if isEditingDesc}}
               <button {{action 'doneEditingDesc'}} class='pull-right btn btn-default'>Done</button>
             {{else}}
-              <button {{action 'editDesc'}} class="pull-right btn btn-default">Edit description</button>
+              <button {{action 'editDesc'}} class="pull-right btn btn-default">Edit Description</button>
             {{/if}}
           </div>
         </div>
       </div>
       <div class="comp-s-item border-bottom clearfix">
         <div class='col-lg-4'>
-          <h4>Icon</h4>
+          <h4>Group icon</h4>
           <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#" title="">Aenean ac magna ipsum.</a></small>
         </div>
         <div class="col-lg-8">
@@ -94,7 +94,7 @@
               <span>Current Icon:</span>
             </div>
             <div class="col-sm-8">
-              <i class="fa {{model.icon}}"></i>
+              <i class="fa {{group.icon}}"></i>
             </div>
           </div>
           <hr>
@@ -104,7 +104,7 @@
                 New icon: 
               </label>
               <div class="col-sm-7">
-                {{#x-select action="selectIcon" id="icon-select" value=category.icon class="form-control"}}
+                {{#x-select action="selectIcon" id="icon-select" value=group.icon class="form-control"}}
                   {{#x-option value="fa-cloud"}}fa-cloud{{/x-option}}
                   {{#x-option value="fa-envelope-o"}}fa-envelope-o{{/x-option}}
                   {{#x-option value="fa-file-text-o"}}fa-file-text-o{{/x-option}}
@@ -114,14 +114,35 @@
           </div>
         </div>
       </div>
-      
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>Group slug</h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          <div class="col-lg-8">
+            {{#if isEditingSlug }}
+              {{input value=group.slug id="slug" class="string required form-control"}}
+            {{else}}
+              <span>{{group.slug}}</span>
+            {{/if}}
+          </div>
+          <div class="col-lg-4">
+            {{#if isEditingSlug}}
+              <button {{action 'doneEditingSlug'}} class='pull-right btn btn-default'>Done</button>
+            {{else}}
+              <button {{action 'editSlug'}} class="pull-right btn btn-default">Edit Slug</button>
+            {{/if}}
+          </div>
+        </div>
+      </div>
       <div class="comp-s-item clearfix">
         <div class='col-lg-4'>
-          <h4>Enable Category</h4>
+          <h4>Enable Group</h4>
           <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#" title="">Aenean ac magna ipsum.</a></small>
         </div>
         <div class="col-lg-8">
-          {{input type="checkbox" name=model.enabled checked=model.enabled}}
+          {{input type="checkbox" name=group.enabled checked=group.enabled}}
           <strong class="ml_10">Enabled</strong>
         </div>
       </div>
@@ -130,17 +151,14 @@
     <div class="col-lg-4">
       <div class="comp-s-item clearfix">
         <div class="mt_20">
-          <div class="box_category">
-            <div class="box_icon">
-              <i class="fa {{model.icon}}"></i>
+          <div class="box_group">
+            <div class="box_icon_group">
+              <a href="/br/shop/servers/cloud-servers">
+                <i class="fa {{group.icon}}"></i>
+              </a>
             </div>
-            <div class="box_desc">
-              <h3>
-                {{model.name}}
-                <span>{{model.description}}</span>
-              </h3>
-              <a class="btn btn-default btn-inverse">Veja as Opções</a>
-            </div>
+            <h3>{{group.name}}</h3>
+            <p>{{group.description}}</p>
           </div>
         </div>
       </div>
@@ -149,7 +167,7 @@
   <div class="row">
     <br>
     <div class="col-md-4">
-      <button {{action 'save'}} id="save_bottom" class="btn btn-primary">Save options</button>
+      <button {{action 'save'}} id="save_bottom" class="btn btn-primary">Save Options</button>
     </div>
   </div>
 </div>
