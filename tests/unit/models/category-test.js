@@ -1,10 +1,14 @@
+import Ember from 'ember';
 import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('category', 'Unit | Model | category', {
-  needs: []
+  needs: ['model:group']
 });
 
-test('it exists', function(assert) {
-  var model = this.subject();
-  assert.ok(!!model);
+test('group relationship', function(assert) {
+  var category = this.store().modelFor('category');
+  var relationship = Ember.get(category, 'relationshipsByName').get('groups');
+
+  assert.equal(relationship.key, 'groups');
+  assert.equal(relationship.kind, 'hasMany');
 });
