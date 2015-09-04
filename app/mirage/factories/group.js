@@ -1,8 +1,11 @@
 import Mirage from 'ember-cli-mirage';
 
 export default Mirage.Factory.extend({
-  name: function generateCategoryName(i) {
-    return "Category " + (i+1);
+  name: function generateGroupName(i) {
+    return "Group " + (i+1);
+  },
+  slug: function generateSlug(i) {
+    return "group_" + (i+1);
   },
   description: "Description",
   icon: "fa-cloud",

@@ -1,0 +1,123 @@
+<div class='row wrapper backs'>
+    <div class='col-lg-3 go-back'>
+      {{#link-to 'admin.categories.category.groups' model.category_id}}
+        <i class="fa fa-angle-left"></i>
+        <span>Groups</span>
+      {{/link-to}}
+    </div>
+    <div class='col-lg-5 title'>
+      <span>{{model.name}}</span>
+    </div>
+    <div class="col-lg-4 pull-right">
+      <a class="btn btn-primary pull-right mr_20" {{action 'save'}} id="save_top" role="button"><i class="fa fa-plus"></i> Create Group</a>
+    </div>
+</div>
+<div class='row wrapper backs-nav'>
+  <div class='col-lg-10 col-lg-offset-1 comp-nav'>
+    <div class="comp-nav-item">
+      {{#link-to 'admin.categories.category' model.category_id}}
+        <i class="fa fa-info"></i>
+        <span>Information</span>
+      {{/link-to}}
+    </div>
+    <div class="comp-nav-item">
+      {{#link-to 'admin.categories.category.groups' model.category_id}}
+        <i class="fa fa-tags"></i>
+        <span>Groups</span>
+      {{/link-to}}
+    </div>
+    <div class="comp-nav-item">
+      {{#link-to 'admin.categories.category.groups.new' model.category_id}}
+        <i class="fa fa-plus"></i>
+        <span>New Group</span>
+      {{/link-to}}
+    </div>
+  </div>
+</div>
+<!-- CONTENT -->
+<div class='wrapper wrapper-content fix-padding-mini-dashs'>
+  <div class='row'>
+    <div class="col-lg-8">
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>Group name</h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          {{input value=model.name id="name" class="string required form-control"}}
+        </div>
+      </div>
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>Group description</h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          {{input value=model.description id="desc" class="string required form-control"}}
+        </div>
+      </div>
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>Group icon</h4>
+          <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#" title="">Aenean ac magna ipsum.</a></small>
+        </div>
+        <div class="col-lg-8">
+          <div class="clearfix">
+            <div class="col-sm-4">
+              <span>Current Icon:</span>
+            </div>
+            <div class="col-sm-8">
+              <i class="fa {{model.icon}}"></i>
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <form class="simple_form form-horizontal form-group string required">
+              <label class="col-sm-3 string required control-label">
+                New icon: 
+              </label>
+              <div class="col-sm-7">
+                {{#x-select action="selectIcon" id="icon-select" value=group.icon class="form-control"}}
+                  {{#x-option value="fa-cloud"}}fa-cloud{{/x-option}}
+                  {{#x-option value="fa-envelope-o"}}fa-envelope-o{{/x-option}}
+                  {{#x-option value="fa-file-text-o"}}fa-file-text-o{{/x-option}}
+                {{/x-select}}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>Group slug</h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          {{input value=model.slug id="slug" class="string required form-control"}}
+        </div>
+      </div>
+    </div>
+    <!-- preview -->
+    <div class="col-lg-4">
+      <div class="comp-s-item clearfix">
+        <div class="mt_20">
+          <div class="box_group">
+            <div class="box_icon_group">
+              <a href="/br/shop/servers/cloud-servers">
+                <i class="fa {{model.icon}}"></i>
+              </a>
+            </div>
+            <h3>{{model.name}}</h3>
+            <p>{{model.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <br>
+    <div class="col-md-4">
+      <button {{action 'save'}} id="save_bottom" class="btn btn-primary">Create Group</button>
+    </div>
+  </div>
+</div>
