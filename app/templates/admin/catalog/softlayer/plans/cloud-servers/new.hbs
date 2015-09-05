@@ -1,0 +1,367 @@
+<div class='row wrapper backs'>
+  <div class='col-lg-3 go-back'>
+    {{#link-to 'admin.catalog.softlayer.plans.cloud_servers'}}
+      <i class="fa fa-angle-left"></i>
+      <span>Plans</span>
+    {{/link-to}}
+  </div>
+  <div class='col-lg-5 title'>
+    <span>{{model.name}}</span>
+  </div>
+  <div class="col-lg-4">
+    <a class="btn btn-primary pull-right mr_20" {{action 'save'}} id="save_top" role="button"><i class="fa fa-plus"></i> Create plan</a>
+  </div>
+</div>
+<!-- CONTENT -->
+<div class='wrapper wrapper-content fix-padding-mini-dashs'>
+  <div class='row'>
+    <div class="col-lg-8">
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>Basic information</h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          <div class="row mb_40">
+            <div class="col-lg-4">
+              <span>Name</span>
+            </div>
+            <div class="col-lg-8">
+              {{input value=model.name id="name" class="string required form-control"}}
+            </div>
+          </div>
+          <div class="row mt_20">
+            <div class="col-lg-6 mb_20">
+              {{input type="checkbox" name=model.enabled checked=model.enabled}}
+              <strong class="ml_10">Enabled</strong>
+            </div>
+            <div class="col-lg-6">
+              {{input type="checkbox" name=model.hourly checked=model.hourly}}
+              <strong class="ml_10">Hourly</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>General details</h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          <div class="form-group">
+            <form class="simple_form form-horizontal form-group string required">
+              <div class="row">
+                <label class="col-sm-4 string required control-label">
+                  Processor
+                </label>
+                <div class="col-sm-7">
+                  {{#x-select id="cpu-select" value=model.processor class="form-control"}}
+                    {{#x-option value="1 x 2.0 GHz Core"}}1 x 2.0 GHz Core{{/x-option}}
+                    {{#x-option value="2 x 2.0 GHz Core"}}2 x 2.0 GHz Core{{/x-option}}
+                    {{#x-option value="4 x 2.0 GHz Core"}}4 x 2.0 GHz Core{{/x-option}}
+                  {{/x-select}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <label class="col-sm-4 string required control-label">
+                  Memory
+                </label>
+                <div class="col-sm-7">
+                  {{#x-select id="memory-select" value=model.memory class="form-control"}}
+                    {{#x-option value="1 GB"}}1 GB{{/x-option}}
+                    {{#x-option value="2 GB"}}2 GB{{/x-option}}
+                    {{#x-option value="8 GB"}}8 GB{{/x-option}}
+                  {{/x-select}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <label class="col-sm-4 string required control-label">
+                  Datacenter
+                </label>
+                <div class="col-sm-7">
+                  {{#x-select id="datacenter-select" value=model.datacenter class="form-control"}}
+                    {{#x-option value="Amsterdam 1"}}Amsterdam 1{{/x-option}}
+                    {{#x-option value="Amsterdam 2"}}Amsterdam 2{{/x-option}}
+                    {{#x-option value="Dallas 1"}}Dallas 1{{/x-option}}
+                  {{/x-select}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <label class="col-sm-4 string required control-label">
+                  Operating system
+                </label>
+                <div class="col-sm-7">
+                  {{#x-select id="os-select" value=model.operating_system class="form-control"}}
+                    {{#x-option value="CentOS - Latest"}}CentOS - Latest{{/x-option}}
+                    {{#x-option value="CentOS - Latest 2"}}CentOS - Latest 2{{/x-option}}
+                    {{#x-option value="CentOS - Latest 3"}}CentOS - Latest 3{{/x-option}}
+                  {{/x-select}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <label class="col-sm-4 string required control-label">
+                  Network component
+                </label>
+                <div class="col-sm-7">
+                  {{#x-select id="network-select" value=model.network class="form-control"}}
+                    {{#x-option value="10 Mbps Public & Private Network Uplinks"}}
+                      10 Mbps Public & Private Network Uplinks
+                    {{/x-option}}
+                    {{#x-option value="100 Mbps Public & Private Network Uplinks"}}
+                      100 Mbps Public & Private Network Uplinks
+                    {{/x-option}}
+                    {{#x-option value="1000 Mbps Public & Private Network Uplinks"}}
+                      1000 Mbps Public & Private Network Uplinks
+                    {{/x-option}}
+                  {{/x-select}}
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>Disk Type</h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          <div class="radio">
+            <label>
+              {{radio-button value=true checked=model.disk_san}}
+              SAN
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              {{radio-button value=false checked=model.disk_san}}
+              LOCAL
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-s-item border-bottom clearfix">
+        <div class='col-lg-4'>
+          <h4>
+            Disk
+            {{#if model.disk_san}}
+              SAN
+            {{else}}
+              LOCAL
+            {{/if}}
+          </h4>
+          <small>Consectetur adipiscing. Lorem ipsum dolor sit amet elit. <a href="#" title="">Aenean ac magna.</a></small>
+        </div>
+        <div class="col-lg-8">
+          <div class="form-group">
+            <form class="simple_form form-horizontal form-group string required">
+              <div class="row">
+                <label class="col-sm-4 string required control-label">
+                  Disk 1
+                </label>
+                <div class="col-sm-7">
+                  {{#x-select id="disk1-select" value=model.disk_1 class="form-control"}}
+                    {{#x-option value="10 GB"}}10 GB{{/x-option}}
+                    {{#x-option value="20 GB"}}20 GB{{/x-option}}
+                    {{#x-option value="40 GB"}}40 GB{{/x-option}}
+                  {{/x-select}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <label class="col-sm-4 string required control-label">
+                  Disk 2
+                </label>
+                <div class="col-sm-7">
+                  {{#x-select id="disk2-select" value=model.disk_2 class="form-control"}}
+                    {{#x-option value="10 GB"}}10 GB{{/x-option}}
+                    {{#x-option value="20 GB"}}20 GB{{/x-option}}
+                    {{#x-option value="40 GB"}}40 GB{{/x-option}}
+                  {{/x-select}}
+                </div>
+              </div>
+              {{#if model.disk_san}}
+                <hr>
+                <div class="row">
+                  <label class="col-sm-4 string required control-label">
+                    Disk 3
+                  </label>
+                  <div class="col-sm-7">
+                    {{#x-select id="disk3-select" value=model.disk_3 class="form-control"}}
+                      {{#x-option value="10 GB"}}10 GB{{/x-option}}
+                      {{#x-option value="20 GB"}}20 GB{{/x-option}}
+                      {{#x-option value="40 GB"}}40 GB{{/x-option}}
+                    {{/x-select}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <label class="col-sm-4 string required control-label">
+                    Disk 4
+                  </label>
+                  <div class="col-sm-7">
+                    {{#x-select id="disk4-select" value=model.disk_4 class="form-control"}}
+                      {{#x-option value="10 GB"}}10 GB{{/x-option}}
+                      {{#x-option value="20 GB"}}20 GB{{/x-option}}
+                      {{#x-option value="40 GB"}}40 GB{{/x-option}}
+                    {{/x-select}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <label class="col-sm-4 string required control-label">
+                    Disk 5
+                  </label>
+                  <div class="col-sm-7">
+                    {{#x-select id="disk5-select" value=model.disk_5 class="form-control"}}
+                      {{#x-option value="10 GB"}}10 GB{{/x-option}}
+                      {{#x-option value="20 GB"}}20 GB{{/x-option}}
+                      {{#x-option value="40 GB"}}40 GB{{/x-option}}
+                    {{/x-select}}
+                  </div>
+                </div>
+              {{/if}}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="comp-s-item clearfix">
+        <div class="summary">
+          <h4 class="mb_20">Summary</h4>
+          <h5 class="mb_10">Basic information</h5>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Name</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.name}}</span>
+            </div>
+          </div>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Enabled</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.enabled}}</span>
+            </div>
+          </div>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Hourly</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.hourly}}</span>
+            </div>
+          </div>
+          <h5 class="mt_20">General details</h5>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Processor</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.processor}}</span>
+            </div>
+          </div>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Memory</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.memory}}</span>
+            </div>
+          </div>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Datacenter</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.datacenter}}</span>
+            </div>
+          </div>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Operating system</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.operating_system}}</span>
+            </div>
+          </div>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Network component</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.network}}</span>
+            </div>
+          </div>
+          <h5 class="mt_20">
+            Disk
+            {{#if model.disk_san}}
+              SAN
+            {{else}}
+              LOCAL
+            {{/if}}
+          </h5>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Disk 1</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.disk_1}}</span>
+            </div>
+          </div>
+          <div class="summary-group clearfix">
+            <div class="summary-label col-sm-5">
+              <span>Disk 2</span>
+            </div>
+            <div class="col-sm-7">
+              <span>{{model.disk_2}}</span>
+            </div>
+          </div>
+          {{#if model.disk_san}}
+            <div class="summary-group clearfix">
+              <div class="summary-label col-sm-5">
+                <span>Disk 3</span>
+              </div>
+              <div class="col-sm-7">
+                <span>{{model.disk_3}}</span>
+              </div>
+            </div>
+            <div class="summary-group clearfix">
+              <div class="summary-label col-sm-5">
+                <span>Disk 4</span>
+              </div>
+              <div class="col-sm-7">
+                <span>{{model.disk_4}}</span>
+              </div>
+            </div>
+            <div class="summary-group clearfix">
+              <div class="summary-label col-sm-5">
+                <span>Disk 5</span>
+              </div>
+              <div class="col-sm-7">
+                <span>{{model.disk_5}}</span>
+              </div>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <br>
+    <div class="col-md-4">
+      <button {{action 'save'}} id="save_bottom" class="btn btn-primary">Create Plan</button>
+    </div>
+  </div>
+</div>

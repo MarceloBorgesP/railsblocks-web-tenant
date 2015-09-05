@@ -8,5 +8,11 @@ export default function() {
   this.post('/categories');
   this.put('/categories/:id');
   this.delete('/categories/:id');
+
+  this.get('/planCloudServers');
+  this.get('/planCloudServers/:id');
+  this.post('/planCloudServers');
+  this.put('/planCloudServers/:id');
+  this.delete('/planCloudServers/:id');
   
 }

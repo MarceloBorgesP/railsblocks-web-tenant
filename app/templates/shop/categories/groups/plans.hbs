@@ -1,0 +1,96 @@
+<div id="page-menu">
+  <div class="container clearfix">
+    <div class="menu_page_title">
+      Produtos
+      <span>Loja</span>
+    </div>
+    <nav>
+      <ul>
+        {{#each model as |plan|}}
+          <li>
+            <a>{{plan.name}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+    <div id="page-submenu-trigger">
+      <i class="icon-reorder"></i>
+    </div>
+  </div>
+</div>
+
+<section class="page_title">
+  <div class="container clearfix">
+    <h2>Servidores</h2>
+    <span>Servidores perfeitos para a sua necessidade, performance e confiabilidade!</span>
+    <ol class="breadcrumb">
+      <li>
+        <a>Página Inicial</a>
+      </li>
+      <li>
+        <a>Loja</a>
+      </li>
+      <li class="active">Servidores</li>
+    </ol>
+  </div>
+</section>
+<section id="page_content">
+  <div class="wrap_content">
+    <div class="container clearfix">
+      <div class="title_border_bottom">
+        <h3>
+          Mais
+          <span>planos a sua escolha</span>
+        </h3>
+      </div>
+      {{#each model as |plan|}}
+        <div class="col-sm-6 col-md-4">
+          <div class="box_plan">
+            <div class="box_icon_plan">
+              <i class="fa fa-cloud"></i>
+            </div>
+            <div class="box_desc">
+              <h3>
+                {{plan.name}}
+              </h3>
+              <p>
+                Processor
+                :
+                <b>{{plan.processor}}</b>
+                <br>
+                RAM Memory
+                :
+                <b>{{plan.memory}}</b>
+                <br>
+                Disk Type
+                :
+                <b>
+                  {{#if plan.disk_san}}
+                    san
+                  {{else}}
+                    local
+                  {{/if}}
+                </b>
+                <br>
+                Disk 1
+                :
+                <b>{{plan.disk_1}}</b>
+                <br>
+                Datacenter
+                :
+                <b>{{plan.datacenter}}</b>
+                <br>
+                Operating System
+                :
+                <b>{{plan.operating_system}}</b>
+                <br>
+                {{plan.value}}
+              </p>
+              <a class="btn btn-default btn-inverse">Adicionar ao Carrinho</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<div class='row wrapper'>
+  <div class='col-lg-10'>
+    <h3>Listing Plans</h3>
+    <ol class='breadcrumb'>
+      <li>
+        <a href='/'>Home</a>
+      </li>
+      <li>
+        <a>Plans</a>
+      </li>
+      <li class='active'>
+        <strong>Listing Plans</strong>
+      </li>
+    </ol>
+  </div>
+  <div class='col-lg-2'></div>
+</div>
+<!-- CONTENT -->
+<div class='wrapper wrapper-content'>
+  <div class='row'>
+    <div class='col-lg-10 s-element plans'>
+      <h4>Plans</h4>
+      <div class="pull-right">
+        {{link-to 'New plan' 'admin.catalog.softlayer.plans.cloud_servers.new' class="btn btn-default"}}
+      </div>
+      <br>
+      <br>
+      {{#each model as |plan|}}
+        <div class="s-element-item">
+          <i class="fa fa-square"></i>
+          {{#link-to 'admin.catalog.softlayer.plans.cloud_servers.cloud_server' plan}}
+            {{plan.name}}
+          {{/link-to}}
+        </div>
+      {{else}}
+        <div class="s-element-item">
+          <i class="fa fa-square"></i>
+          <span>
+            No plans yet!
+          </span>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
