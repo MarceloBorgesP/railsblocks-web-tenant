@@ -1,0 +1,416 @@
+<section class="page_title page_title_mini">
+    <div class="container clearfix">
+        <h2>Servidores Dedicados</h2>
+        <span>As melhores soluções de Cloud do mercado.</span>
+        <ol class="breadcrumb">
+            <li>
+                <a>Página Inicial</a>
+            </li>
+            <li>
+                <a>Produtos e Serviços</a>
+            </li>
+            <li class="active">Servidores Dedicados</li>
+        </ol>
+    </div>
+</section>
+<section id="page_content">
+    <div class="wrap_content">
+        <div class="container clearfix">
+            <ul class="menu_steps clearfix">
+                <li class="active">
+                    <a class="step_icon fa fa-database" href="#"></a>
+                    <h5>Configurar Produto</h5>
+                </li>
+                <li>
+                    <a class="step_icon fa fa-shopping-cart" href="#"></a>
+                    <h5>Revisar Compra</h5>
+                </li>
+                <li>
+                    <a class="step_icon fa fa-user" href="#"></a>
+                    <h5>Identificação</h5>
+                </li>
+                <li>
+                    <a class="step_icon fa fa-money" href="#"></a>
+                    <h5>Efetuar Pagamento</h5>
+                </li>
+                <li>
+                    <a class="step_icon fa fa-check" href="#"></a>
+                    <h5>Produto Liberado</h5>
+                </li>
+            </ul>
+        </div>
+        <form accept-charset="UTF-8" method="post">
+            <div class="container clearfix">
+                <div class="col-md-9">
+                    <!-- New VM -->
+                    <div class="row">
+                        <h3>Nova Máquina Virtual</h3>
+                        <div class="col-md-6">
+                            <label>Hostname</label>
+                            <div class="form-group">
+                                {{input id="name" value=model.name class="string required form-control"}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Domínio</label>
+                            <div class="form-group">
+                                {{input id="domain" value=model.domain class="string required form-control"}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- System Config -->
+                    <div class="row">
+                        <h3>Configuração do Sistema</h3>
+                        <div class="col-md-4">
+                            <label>Localização de Datacenter</label>
+                            {{#x-select id="datacenter-select" value=model.datacenter class="form-control"}}
+                                {{#x-option value="1"}}Datacenter 1{{/x-option}}
+                                {{#x-option value="2"}}Datacenter 2{{/x-option}}
+                                {{#x-option value="3"}}Datacenter 3{{/x-option}}
+                            {{/x-select}}
+                        </div>
+                        <div class="col-md-4">
+                            <label>Processor</label>
+                            {{#x-select id="processor-select" value=model.processor class="form-control"}}
+                                {{#x-option value="1"}}Processor 1{{/x-option}}
+                                {{#x-option value="2"}}Processor 2{{/x-option}}
+                                {{#x-option value="3"}}Processor 3{{/x-option}}
+                            {{/x-select}}
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- RAM -->
+                    <div>
+                        <label>Memória RAM</label>
+                        <div class="range-slider">
+                            {{x-slider min=0 max=100 step=1 value=model.ram_slider}}
+                            <!-- <input type="text" value="" /> -->
+                            <!-- <input type="text" id="example_id" name="example_name" value="" /> -->
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- OS -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="mb_l">Sistema Operacional</label>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/debian.png">
+                                        </div>
+                                    </div>
+                                    {{#x-select id="redhat" value=model.redhat class="form-control"}}
+                                        {{#x-option value="1"}}RedHat EL - Latest{{/x-option}}
+                                        {{#x-option value="2"}}RedHat EL - Latest (32 bit){{/x-option}}
+                                        {{#x-option value="3"}}RedHat EL - Latest (64 bit){{/x-option}}
+                                    {{/x-select}}
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/debian.png">
+                                        </div>
+                                    </div>
+                                    {{#x-select id="debian" value=model.debian class="form-control"}}
+                                        {{#x-option value="1"}}Debian - Latest{{/x-option}}
+                                        {{#x-option value="2"}}Debian - Latest (32 bit){{/x-option}}
+                                        {{#x-option value="3"}}Debian - Latest (64 bit){{/x-option}}
+                                    {{/x-select}}
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/microsoft.png">
+                                        </div>
+                                    </div>
+                                    {{#x-select id="windows" value=model.windows class="form-control"}}
+                                        {{#x-option value="1"}}Windows - Latest{{/x-option}}
+                                        {{#x-option value="2"}}Windows - Latest (32 bit){{/x-option}}
+                                        {{#x-option value="3"}}Windows - Latest (64 bit){{/x-option}}
+                                    {{/x-select}}
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/centos.png">
+                                        </div>
+                                    </div>
+                                    {{#x-select id="centos" value=model.centos class="form-control"}}
+                                        {{#x-option value="1"}}Centos - Latest{{/x-option}}
+                                        {{#x-option value="2"}}Centos - Latest (32 bit){{/x-option}}
+                                        {{#x-option value="3"}}Centos - Latest (64 bit){{/x-option}}
+                                    {{/x-select}}
+                                </div>
+                            </div>
+                            <div class="row mt_l">
+                                <div class="col-md-3">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/vyatta.png">
+                                        </div>
+                                    </div>
+                                    {{#x-select id="vyatta" value=model.vyatta class="form-control"}}
+                                        {{#x-option value="1"}}Vyatta - Latest{{/x-option}}
+                                        {{#x-option value="2"}}Vyatta - Latest (32 bit){{/x-option}}
+                                        {{#x-option value="3"}}Vyatta - Latest (64 bit){{/x-option}}
+                                    {{/x-select}}
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/ubuntu.png">
+                                        </div>
+                                    </div>
+                                    {{#x-select id="ubuntu" value=model.ubuntu class="form-control"}}
+                                        {{#x-option value="1"}}Ubuntu - Latest{{/x-option}}
+                                        {{#x-option value="2"}}Ubuntu - Latest (32 bit){{/x-option}}
+                                        {{#x-option value="3"}}Ubuntu - Latest (64 bit){{/x-option}}
+                                    {{/x-select}}
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/cloudlinux.png">
+                                        </div>
+                                    </div>
+                                    {{#x-select id="cloud_linux" value=model.cloud_linux class="form-control"}}
+                                        {{#x-option value="1"}}Cloud Linux - Latest{{/x-option}}
+                                        {{#x-option value="2"}}Cloud Linux - Latest (32 bit){{/x-option}}
+                                        {{#x-option value="3"}}Cloud Linux - Latest (64 bit){{/x-option}}
+                                    {{/x-select}}
+                                </div>
+                                <div class="col-md-4 hidden">
+                                    <div class="box_SO">
+                                        <div class="box_img">
+                                            <img src="/images/SO/other_options.png">
+                                        </div>
+                                    </div>
+                                    <select class="form-control">
+                                        <option value="">Mais Opções</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Disk -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Disco</label>
+                            <div class="switching">
+                                <div class="switch switch-blue">
+                                    {{radio-button id="local" class="switch-input"value=true checked=model.disc}}
+                                    <label class="switch-label switch-label-off" for="local">Local</label>
+                                    {{radio-button id="san" class="switch-input" value=false checked=model.disc}}
+                                    <label class="switch-label switch-label-on" for="san">San</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                            </div>
+                            <div class="tabss">
+                            {{#if model.disc }}
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#disc1" aria-controls="disc1" role="tab" data-toggle="tab">Disco 1</a></li>
+                                    <li role="presentation"><a href="#disc2" aria-controls="disc2" role="tab" data-toggle="tab">Disco 2</a></li>
+                                    <li role="presentation"><a href="#disc3" aria-controls="disc3" role="tab" data-toggle="tab">Disco 3</a></li>
+                                    <li role="presentation"><a href="#disc4" aria-controls="disc4" role="tab" data-toggle="tab">Disco 4</a></li>
+                                    <li role="presentation"><a href="#disc5" aria-controls="disc5" role="tab" data-toggle="tab">Disco 5</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="disc">
+                                        {{x-slider min=0 max=100 step=1 value=model.disc1_local}}
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="disc2">
+                                        
+                                        {{x-slider min=0 max=100 step=1 value=model.disc2_local}}
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="disc3">
+                                        {{x-slider min=0 max=100 step=1 value=model.disc3_local}}
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="disc4">
+                                        {{x-slider min=0 max=100 step=1 value=model.disc4_local}}
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="disc5">
+                                        {{x-slider min=0 max=100 step=1 value=model.disc5_local}}
+                                    </div>
+                                </div>
+                            {{else}}
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#disc1" aria-controls="disc1" role="tab" data-toggle="tab">Disco 1</a></li>
+                                    <li role="presentation"><a href="#disc2" aria-controls="disc2" role="tab" data-toggle="tab">Disco 2</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="dis6">
+                                        {{x-slider min=0 max=100 step=1 value=model.disc1_san}}
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="disc7">
+                                        {{x-slider min=0 max=100 step=1 value=model.disc2_san}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Network options -->
+                    <div class="row">
+                        <h3>Opções de Rede</h3>
+                        <div class="col-md-4">
+                            <label>Velocidade do Link</label>
+                            <select class="form-control">
+                                <option value="">Escolha a velocidade do Link</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Order review -->
+                    <div class="row mt_l">
+                        <div class="col-md-12">
+                            <div id="submit_form">
+                                {{input enter="submit" type="submit" name="commit" value="Review Purchase" class="btn btn-default pull-right"}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Value Summary -->
+                <div class="col-md-3">
+                    <div class="value_div">
+                        <h3>Valor</h3>
+                        <div class="switching">
+                            <div class="switch switch-blue">
+                                {{radio-button id="hourly" class="switch-input" value=true checked=model.hourly}}
+                                <label class="switch-label switch-label-off" for="hourly">Hora</label>
+                                {{radio-button id="monthly" class="switch-input" value=false checked=model.hourly}}
+                                <label class="switch-label switch-label-on" for="monthly">Mês</label>
+                                <span class="switch-selection"></span>
+                            </div>
+                        </div>
+                        {{#if model.hourly }}
+                            <table class="table table-striped table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td>RAM</td>
+                                        <td class="memory">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPU</td>
+                                        <td class="processor">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sistema Operacional</td>
+                                        <td class="operating_system">R$ 0</td>
+                                    </tr>
+                                    <tr class="hidden">
+                                        <td>Disco 1</td>
+                                        <td class="disk_local_1">R$ 0</td>
+                                    </tr>
+                                    <tr class="hidden">
+                                        <td>Disco 2</td>
+                                        <td class="disk_local_2">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 1</td>
+                                        <td class="disk_san_1">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 2</td>
+                                        <td class="disk_san_2">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 3</td>
+                                        <td class="disk_san_3">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 4</td>
+                                        <td class="disk_san_4">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 5</td>
+                                        <td class="disk_san_5">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uplink</td>
+                                        <td class="network_component">R$ 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td class="total">R$ 0</td>
+                                    </tr>
+                                    <tr class="div_recalculate hidden">
+                                        <td class="text-center" colspan="2">
+                                            Calculando...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        {{else}}
+<table class="table table-striped table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td>RAM</td>
+                                        <td class="memory">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPU</td>
+                                        <td class="processor">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sistema Operacional</td>
+                                        <td class="operating_system">R$ 1</td>
+                                    </tr>
+                                    <tr class="hidden">
+                                        <td>Disco 1</td>
+                                        <td class="disk_local_1">R$ 1</td>
+                                    </tr>
+                                    <tr class="hidden">
+                                        <td>Disco 2</td>
+                                        <td class="disk_local_2">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 1</td>
+                                        <td class="disk_san_1">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 2</td>
+                                        <td class="disk_san_2">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 3</td>
+                                        <td class="disk_san_3">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 4</td>
+                                        <td class="disk_san_4">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disco 5</td>
+                                        <td class="disk_san_5">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uplink</td>
+                                        <td class="network_component">R$ 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td class="total">R$ 1</td>
+                                    </tr>
+                                    <tr class="div_recalculate hidden">
+                                        <td class="text-center" colspan="2">
+                                            Calculando...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        {{/if}}
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

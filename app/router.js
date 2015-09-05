@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('categories.new', { path: 'categories/new' });
   });
   this.route('shop.categories', { path: 'shop' });
+  this.route('shop.customize', { path: 'shop/customize' });
 });
 
 export default Router;

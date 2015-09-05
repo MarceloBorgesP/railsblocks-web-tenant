@@ -8,5 +8,9 @@ export default function() {
   this.post('/categories');
   this.put('/categories/:id');
   this.delete('/categories/:id');
-  
+
+  this.get('/plans');
+  this.get('/plans/:id');
+  this.post('/plans');
+  this.put('/plans/:id');
 }
