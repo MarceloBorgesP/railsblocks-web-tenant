@@ -9,10 +9,16 @@ export default function() {
   this.put('/categories/:id');
   this.delete('/categories/:id');
 
+  this.get('/groups');
+  this.get('/groups/:id');
+  this.post('/groups');
+  this.put('/groups/:id');
+  this.delete('/groups/:id');
+
   this.get('/planCloudServers');
   this.get('/planCloudServers/:id');
   this.post('/planCloudServers');
   this.put('/planCloudServers/:id');
   this.delete('/planCloudServers/:id');
-  
+
 }

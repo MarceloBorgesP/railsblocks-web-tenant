@@ -17,10 +17,14 @@ Router.map(function() {
       });
     });
     this.route('categories');
-    this.route('categories.category', { path: 'categories/:category_id' });
     this.route('categories.new', { path: 'categories/new' });
+    this.route('categories.category', { path: 'categories/:category_id' });
+    this.route('categories.category.groups', { path: 'categories/:category_id/groups' });
+    this.route('categories.category.groups.new', { path: 'categories/:category_id/groups/new' });
+    this.route('categories.category.groups.group', { path: 'categories/:category_id/groups/:group_id' });
   });
   this.route('shop.categories', { path: 'shop' });
+  this.route('shop.categories.groups', { path: 'shop/category/:category_slug' });
   this.route('shop.categories.groups.plans', { path: 'shop/category/:category_slug/group/:group_slug' });
 });
 
