@@ -1,4 +1,5 @@
 import planModelMixin from '../mixins/plan_model';
+import DS from 'ember-data';
 
 export default DS.Model.extend(planModelMixin, {
   datacenter: DS.attr('string'),
