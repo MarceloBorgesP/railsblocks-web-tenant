@@ -13,7 +13,7 @@ module('Acceptance | plans', {
 });
 
 test('admin listing plans of the catalog', function(assert) {
-  server.createList('planCloudServer', 3);
+  server.createList('cloud_server', 3);
 
   andThen(function() {
     visit('/admin/catalog/softlayer/plans/cloud_servers');
@@ -47,7 +47,7 @@ test('admin create a new plan', function(assert) {
 });
 
 test('admin edit a plan', function(assert) {
-  server.create('planCloudServer', {name: 'Small'});
+  server.create('cloud_server', {name: 'Small'});
 
   andThen(function() {
     visit('/admin/catalog/softlayer/plans/cloud_servers');
@@ -62,7 +62,7 @@ test('admin edit a plan', function(assert) {
 });
 
 test('admin delete a plan', function(assert) {
-  server.create('planCloudServer', {name: 'Small'});
+  server.create('cloud_server', {name: 'Small'});
 
   andThen(function() {
     visit('/admin/catalog/softlayer/plans/cloud_servers');

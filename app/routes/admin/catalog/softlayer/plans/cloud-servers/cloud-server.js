@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(params) {
-    return this.store.find('plan-cloud-server', params.cloud_server_id);
+    return this.store.find('plans/cloud-server', params.cloud_server_id);
   },
   actions: {
     delete: function() {
