@@ -9,8 +9,15 @@ export default function() {
   this.put('/categories/:id');
   this.delete('/categories/:id');
 
+  this.get('/groups');
+  this.get('/groups/:id');
+  this.post('/groups');
+  this.put('/groups/:id');
+  this.delete('/groups/:id');
+
   this.get('/plans');
   this.get('/plans/:id');
   this.post('/plans');
   this.put('/plans/:id');
+
 }

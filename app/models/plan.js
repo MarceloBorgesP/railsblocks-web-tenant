@@ -12,14 +12,15 @@ export default DS.Model.extend({
   vyatta: DS.attr('string'), 
   ubuntu: DS.attr('string'),
   cloud_linux: DS.attr('string'),
-  disc: DS.attr('boolean'),
+  ram: DS.attr('string'),
+  disk: DS.attr('boolean'),
   hourly: DS.attr('boolean'), 
   link_speed: DS.attr('string'),
-  disc1_local: DS.attr('number'),
-  disc2_local: DS.attr('number'),
-  disc3_local: DS.attr('number'),
-  disc4_local: DS.attr('number'),
-  disc5_local: DS.attr('number'),
-  disc1_san: DS.attr('number'),
-  disc2_san: DS.attr('number')
+  disk1_local: DS.attr('number'),
+  disk2_local: DS.attr('number'),
+  disk3_local: DS.attr('number'),
+  disk4_local: DS.attr('number'),
+  disk5_local: DS.attr('number'),
+  disk1_san: DS.attr('number'),
+  disk2_san: DS.attr('number')
 });

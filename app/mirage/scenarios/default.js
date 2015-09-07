@@ -1,4 +1,6 @@
 export default function(server) {
-  server.createList('category', 3);
+  var category = server.create('category');
+  server.createList('group', 3, {category_id: category.id});
+
   server.create('plan');  
 }

@@ -62,7 +62,7 @@
                     <!-- System Config -->
                     <div class="row">
                         <h3>Configuração do Sistema</h3>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label>Localização de Datacenter</label>
                             {{#x-select id="datacenter-select" value=model.datacenter class="form-control"}}
                                 {{#x-option value="1"}}Datacenter 1{{/x-option}}
@@ -70,7 +70,7 @@
                                 {{#x-option value="3"}}Datacenter 3{{/x-option}}
                             {{/x-select}}
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label>Processor</label>
                             {{#x-select id="processor-select" value=model.processor class="form-control"}}
                                 {{#x-option value="1"}}Processor 1{{/x-option}}
@@ -81,12 +81,33 @@
                     </div>
                     <hr>
                     <!-- RAM -->
-                    <div>
-                        <label>Memória RAM</label>
-                        <div class="range-slider">
-                            {{x-slider min=0 max=100 step=1 value=model.ram_slider}}
-                            <!-- <input type="text" value="" /> -->
-                            <!-- <input type="text" id="example_id" name="example_name" value="" /> -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <label>Memória RAM</label>
+                                <div class="range-slider">
+                                    {{x-slider min=0 max=100 step=1 value=model.ram}}
+                                    <!-- <input type="text" value="" /> -->
+                                    <!-- <input type="text" id="example_id" name="example_name" value="" /> -->
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>RAM</td>
+                                            <td>{{model.ram}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <hr>
@@ -197,80 +218,120 @@
                     <hr>
                     <!-- Disk -->
                     <div class="row">
-                        <div class="col-md-12">
+                        <div>
                             <label>Disco</label>
                             <div class="switching">
                                 <div class="switch switch-blue">
-                                    {{radio-button id="local" class="switch-input"value=true checked=model.disc}}
+                                    {{radio-button id="local" class="switch-input"value=true checked=model.disk}}
                                     <label class="switch-label switch-label-off" for="local">Local</label>
-                                    {{radio-button id="san" class="switch-input" value=false checked=model.disc}}
+                                    {{radio-button id="san" class="switch-input" value=false checked=model.disk}}
                                     <label class="switch-label switch-label-on" for="san">San</label>
                                     <span class="switch-selection"></span>
                                 </div>
                             </div>
                             <div class="tabss">
-                            {{#if model.disc }}
+                            {{#if model.disk }}
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#disc1" aria-controls="disc1" role="tab" data-toggle="tab">Disco 1</a></li>
-                                    <li role="presentation"><a href="#disc2" aria-controls="disc2" role="tab" data-toggle="tab">Disco 2</a></li>
-                                    <li role="presentation"><a href="#disc3" aria-controls="disc3" role="tab" data-toggle="tab">Disco 3</a></li>
-                                    <li role="presentation"><a href="#disc4" aria-controls="disc4" role="tab" data-toggle="tab">Disco 4</a></li>
-                                    <li role="presentation"><a href="#disc5" aria-controls="disc5" role="tab" data-toggle="tab">Disco 5</a></li>
+                                    <li role="presentation" class="active"><a href="#disk1" aria-controls="disk1" role="tab" data-toggle="tab">Disco 1</a></li>
+                                    <li role="presentation"><a href="#disk2" aria-controls="disk2" role="tab" data-toggle="tab">Disco 2</a></li>
+                                    <li role="presentation"><a href="#disk3" aria-controls="disk3" role="tab" data-toggle="tab">Disco 3</a></li>
+                                    <li role="presentation"><a href="#disk4" aria-controls="disk4" role="tab" data-toggle="tab">Disco 4</a></li>
+                                    <li role="presentation"><a href="#disk5" aria-controls="disk5" role="tab" data-toggle="tab">Disco 5</a></li>
                                 </ul>
                                 <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="disc">
-                                        {{x-slider min=0 max=100 step=1 value=model.disc1_local}}
+                                <div class="tab-content pt_20">
+                                    <div role="tabpanel" class="tab-pane active" id="disk1">
+                                        {{x-slider min=0 max=8192 step=128 value=model.disk1_local}}
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="disc2">
+                                    <div role="tabpanel" class="tab-pane" id="disk2">
                                         
-                                        {{x-slider min=0 max=100 step=1 value=model.disc2_local}}
+                                        {{x-slider min=0 max=100 step=1 value=model.disk2_local}}
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="disc3">
-                                        {{x-slider min=0 max=100 step=1 value=model.disc3_local}}
+                                    <div role="tabpanel" class="tab-pane" id="disk3">
+                                        {{x-slider min=0 max=100 step=1 value=model.disk3_local}}
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="disc4">
-                                        {{x-slider min=0 max=100 step=1 value=model.disc4_local}}
+                                    <div role="tabpanel" class="tab-pane" id="disk4">
+                                        {{x-slider min=0 max=100 step=1 value=model.disk4_local}}
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="disc5">
-                                        {{x-slider min=0 max=100 step=1 value=model.disc5_local}}
+                                    <div role="tabpanel" class="tab-pane" id="disk5">
+                                        {{x-slider min=0 max=100 step=1 value=model.disk5_local}}
                                     </div>
                                 </div>
                             {{else}}
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#disc1" aria-controls="disc1" role="tab" data-toggle="tab">Disco 1</a></li>
-                                    <li role="presentation"><a href="#disc2" aria-controls="disc2" role="tab" data-toggle="tab">Disco 2</a></li>
+                                    <li role="presentation" class="active"><a href="#disk6" aria-controls="disk6" role="tab" data-toggle="tab">Disco 1</a></li>
+                                    <li role="presentation"><a href="#disk7" aria-controls="disk7" role="tab" data-toggle="tab">Disco 2</a></li>
                                 </ul>
                                 <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="dis6">
-                                        {{x-slider min=0 max=100 step=1 value=model.disc1_san}}
+                                <div class="tab-content pt_20">
+                                    <div role="tabpanel" class="tab-pane active" id="disk6">
+                                        {{x-slider min=0 max=100 step=1 value=model.disk1_san}}
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="disc7">
-                                        {{x-slider min=0 max=100 step=1 value=model.disc2_san}}
+                                    <div role="tabpanel" class="tab-pane" id="disk7">
+                                        {{x-slider min=0 max=100 step=1 value=model.disk2_san}}
                                     </div>
                                 </div>
                             {{/if}}
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                    <!-- Network options -->
-                    <div class="row">
-                        <h3>Opções de Rede</h3>
-                        <div class="col-md-4">
-                            <label>Velocidade do Link</label>
-                            <select class="form-control">
-                                <option value="">Escolha a velocidade do Link</option>
-                            </select>
+                        <hr>
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Disk</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>LOCAL 1</td>
+                                        <td>{{model.disk1_local}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LOCAL 2</td>
+                                        <td>{{model.disk2_local}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LOCAL 3</td>
+                                        <td>{{model.disk3_local}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LOCAL 4</td>
+                                        <td>{{model.disk4_local}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LOCAL 5</td>
+                                        <td>{{model.disk5_local}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SAN 1</td>
+                                        <td>{{model.disk1_san}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SAN 2</td>
+                                        <td>{{model.disk12_san}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <hr>
-                    <!-- Order review -->
+                    <!-- Network options -->
                     <div class="row mt_l">
-                        <div class="col-md-12">
+                        <h3>Opções de Rede</h3>
+                        <div class="col-md-4">
+                            <label>Velocidade do Link</label>
+                            {{#x-select value=model.link_speed class="form-control"}}
+                                {{#x-option value="1"}}10 Mbps{{/x-option}}
+                                {{#x-option value="2"}}100 Mbps{{/x-option}}
+                                {{#x-option value="3"}}1Gbps{{/x-option}}
+                            {{/x-select}}
+                        </div>
+                        <!-- Order review -->
+                        <div class="col-md-8 mt_20">
                             <div id="submit_form">
                                 {{input enter="submit" type="submit" name="commit" value="Review Purchase" class="btn btn-default pull-right"}}
                             </div>
