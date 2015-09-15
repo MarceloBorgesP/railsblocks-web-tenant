@@ -64,7 +64,7 @@
                         <h3>Configuração do Sistema</h3>
                         <div class="col-md-6">
                             <label>Localização de Datacenter</label>
-                            {{#x-select id="datacenter-select" value=model.datacenter class="form-control"}}
+                            {{#x-select id="datacenter-select" value=model.datacenter class="turn_select2 form-control"}}
                                 {{#x-option value="1"}}Datacenter 1{{/x-option}}
                                 {{#x-option value="2"}}Datacenter 2{{/x-option}}
                                 {{#x-option value="3"}}Datacenter 3{{/x-option}}
@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-md-6">
                             <label>Processor</label>
-                            {{#x-select id="processor-select" value=model.processor class="form-control"}}
+                            {{#x-select id="processor-select" value=model.processor class="turn_select2 form-control"}}
                                 {{#x-option value="1"}}Processor 1{{/x-option}}
                                 {{#x-option value="2"}}Processor 2{{/x-option}}
                                 {{#x-option value="3"}}Processor 3{{/x-option}}
@@ -122,7 +122,7 @@
                                             <img src="/images/SO/debian.png">
                                         </div>
                                     </div>
-                                    {{#x-select id="redhat" value=model.redhat class="form-control"}}
+                                    {{#x-select id="redhat" value=model.redhat class="turn_select2 form-control"}}
                                         {{#x-option value="1"}}RedHat EL - Latest{{/x-option}}
                                         {{#x-option value="2"}}RedHat EL - Latest (32 bit){{/x-option}}
                                         {{#x-option value="3"}}RedHat EL - Latest (64 bit){{/x-option}}
@@ -134,7 +134,7 @@
                                             <img src="/images/SO/debian.png">
                                         </div>
                                     </div>
-                                    {{#x-select id="debian" value=model.debian class="form-control"}}
+                                    {{#x-select id="debian" value=model.debian class="turn_select2 form-control"}}
                                         {{#x-option value="1"}}Debian - Latest{{/x-option}}
                                         {{#x-option value="2"}}Debian - Latest (32 bit){{/x-option}}
                                         {{#x-option value="3"}}Debian - Latest (64 bit){{/x-option}}
@@ -146,7 +146,7 @@
                                             <img src="/images/SO/microsoft.png">
                                         </div>
                                     </div>
-                                    {{#x-select id="windows" value=model.windows class="form-control"}}
+                                    {{#x-select id="windows" value=model.windows class="turn_select2 form-control"}}
                                         {{#x-option value="1"}}Windows - Latest{{/x-option}}
                                         {{#x-option value="2"}}Windows - Latest (32 bit){{/x-option}}
                                         {{#x-option value="3"}}Windows - Latest (64 bit){{/x-option}}
@@ -158,7 +158,7 @@
                                             <img src="/images/SO/centos.png">
                                         </div>
                                     </div>
-                                    {{#x-select id="centos" value=model.centos class="form-control"}}
+                                    {{#x-select id="centos" value=model.centos class="turn_select2 form-control"}}
                                         {{#x-option value="1"}}Centos - Latest{{/x-option}}
                                         {{#x-option value="2"}}Centos - Latest (32 bit){{/x-option}}
                                         {{#x-option value="3"}}Centos - Latest (64 bit){{/x-option}}
@@ -172,7 +172,7 @@
                                             <img src="/images/SO/vyatta.png">
                                         </div>
                                     </div>
-                                    {{#x-select id="vyatta" value=model.vyatta class="form-control"}}
+                                    {{#x-select id="vyatta" value=model.vyatta class="turn_select2 form-control"}}
                                         {{#x-option value="1"}}Vyatta - Latest{{/x-option}}
                                         {{#x-option value="2"}}Vyatta - Latest (32 bit){{/x-option}}
                                         {{#x-option value="3"}}Vyatta - Latest (64 bit){{/x-option}}
@@ -184,7 +184,7 @@
                                             <img src="/images/SO/ubuntu.png">
                                         </div>
                                     </div>
-                                    {{#x-select id="ubuntu" value=model.ubuntu class="form-control"}}
+                                    {{#x-select id="ubuntu" value=model.ubuntu class="turn_select2 form-control"}}
                                         {{#x-option value="1"}}Ubuntu - Latest{{/x-option}}
                                         {{#x-option value="2"}}Ubuntu - Latest (32 bit){{/x-option}}
                                         {{#x-option value="3"}}Ubuntu - Latest (64 bit){{/x-option}}
@@ -196,7 +196,7 @@
                                             <img src="/images/SO/cloudlinux.png">
                                         </div>
                                     </div>
-                                    {{#x-select id="cloud_linux" value=model.cloud_linux class="form-control"}}
+                                    {{#x-select id="cloud_linux" value=model.cloud_linux class="turn_select2 form-control"}}
                                         {{#x-option value="1"}}Cloud Linux - Latest{{/x-option}}
                                         {{#x-option value="2"}}Cloud Linux - Latest (32 bit){{/x-option}}
                                         {{#x-option value="3"}}Cloud Linux - Latest (64 bit){{/x-option}}
@@ -324,7 +324,7 @@
                         <h3>Opções de Rede</h3>
                         <div class="col-md-4">
                             <label>Velocidade do Link</label>
-                            {{#x-select value=model.link_speed class="form-control"}}
+                            {{#x-select value=model.link_speed class="turn_select2 form-control"}}
                                 {{#x-option value="1"}}10 Mbps{{/x-option}}
                                 {{#x-option value="2"}}100 Mbps{{/x-option}}
                                 {{#x-option value="3"}}1Gbps{{/x-option}}
