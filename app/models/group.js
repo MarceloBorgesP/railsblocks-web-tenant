@@ -6,5 +6,6 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   icon: DS.attr('string'),
   enabled: DS.attr('boolean'),
-  category: DS.belongsTo('category', {async:true})
+  category: DS.belongsTo('category'),
+  plans: DS.hasMany('plan', {async:true})
 });

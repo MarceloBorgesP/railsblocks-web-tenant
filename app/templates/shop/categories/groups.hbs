@@ -39,9 +39,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="box_group">
             <div class="box_icon_group">
-              <a>
-                <i class="fa fa-cloud"></i>
-              </a>
+              {{#link-to 'shop.categories.groups.plans' group.name group.id}}
+                <i class={{group.icon}}></i>
+              {{/link-to}}
             </div>
             <h3>{{group.name}}</h3>
             <p>{{group.description}}</p>

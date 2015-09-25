@@ -10,5 +10,6 @@ export default Mirage.Factory.extend({
   disk4_local: 0,
   disk5_local: 0,
   disk1_san: 0,
-  disk2_san: 0
+  disk2_san: 0,
+  total: 250
  });

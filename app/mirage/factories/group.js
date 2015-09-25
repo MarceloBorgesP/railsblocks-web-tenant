@@ -8,6 +8,7 @@ export default Mirage.Factory.extend({
     return "group_" + (i+1);
   },
   description: "Description",
-  icon: "fa-cloud",
+  icon: "fa fa-cloud",
   enabled: true
 });
+

@@ -22,5 +22,6 @@ export default DS.Model.extend({
   disk4_local: DS.attr('number'),
   disk5_local: DS.attr('number'),
   disk1_san: DS.attr('number'),
-  disk2_san: DS.attr('number')
+  disk2_san: DS.attr('number'),
+  total: DS.attr('number')
 });

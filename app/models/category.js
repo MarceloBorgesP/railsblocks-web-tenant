@@ -5,5 +5,5 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   icon: DS.attr('string'),
   enabled: DS.attr('boolean'),
-  groups: DS.hasMany('group', {async:true})
+  groups: DS.hasMany('group')
 });
